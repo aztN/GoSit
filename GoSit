@@ -1,0 +1,62 @@
+import React from "react";
+
+export default function Website() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      {/* Navbar */}
+      <nav className="flex justify-between items-center p-6 bg-white shadow">
+        <h1 className="text-2xl font-bold">FlexSeat</h1>
+        <div className="space-x-6">
+          <a href="#features" className="hover:text-blue-500">Features</a>
+          <a href="#about" className="hover:text-blue-500">About</a>
+          <a href="#buy" className="hover:text-blue-500">Buy Now</a>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="text-center py-20 bg-gradient-to-r from-black to-gray-800 text-white">
+        <h2 className="text-5xl font-bold mb-4">Portable. Strong. Anywhere.</h2>
+        <p className="text-lg mb-6">The ultimate telescopic outdoor stool for travel, camping, and everyday use.</p>
+        <button className="bg-white text-black px-6 py-3 rounded-xl font-semibold shadow">
+          Shop Now
+        </button>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="p-10 grid md:grid-cols-3 gap-6">
+        {[
+          { title: "Ultra Portable", desc: "Collapses into a compact size you can carry anywhere." },
+          { title: "Heavy Duty", desc: "Strong build supports high weight with stability." },
+          { title: "Adjustable Height", desc: "Easily extend to your preferred seating level." }
+        ].map((item, i) => (
+          <div key={i} className="bg-white p-6 rounded-2xl shadow">
+            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* About */}
+      <section id="about" className="p-10 bg-white text-center">
+        <h2 className="text-3xl font-bold mb-4">Why FlexSeat?</h2>
+        <p className="max-w-2xl mx-auto">
+          Designed for convenience and durability, FlexSeat is perfect for camping, fishing, festivals, and everyday use. Take a seat anywhere, anytime.
+        </p>
+      </section>
+
+      {/* Buy Section */}
+      <section id="buy" className="p-10 text-center">
+        <h2 className="text-3xl font-bold mb-4">Get Yours Today</h2>
+        <p className="mb-6">Lightweight, compact, and built to last.</p>
+        <button className="bg-black text-white px-8 py-4 rounded-2xl text-lg shadow">
+          Buy Now
+        </button>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center p-6 bg-black text-white">
+        <p>© {new Date().getFullYear()} FlexSeat. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
